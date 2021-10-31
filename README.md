@@ -1,7 +1,7 @@
 # AuxiExprVerifier-AEV
-辅助表达式验证工具
+辅助表达式验证工具是使用python脚本检测C语言程序，通过添加辅助表达式，提高插值效率，配合CPAChecker一起使用。
 # Run
-## Run a sibgle file
+## Run a single file
 ./main
 ## Run by a folder
 ./scripts/run.py -i your-folder -o your-output-folder
@@ -34,3 +34,5 @@ My vscode configure file
     ]
 }
 ```
+# Call me
+haowweiling@163.com
