@@ -8,9 +8,9 @@ from PassWhileLoop import PassWhileLoop
 from PassSimplyExpr import PassSimplyExpr
 from PassCompleteBlock import PassCompleteBlock
 
-orgDir = "/home/liangle/verifier/CFG-dupath-of-C/"
-preDir = "/home/liangle/verifier/CFG-dupath-of-C/tmp/"
-tmpDir = "/home/liangle/verifier/CFG-dupath-of-C/tmp/"
+orgDir = "/home/liangle/verifier/AuxiExprVerifier-AEV/"
+preDir = "/home/liangle/verifier/AuxiExprVerifier-AEV/tmp/"
+tmpDir = "/home/liangle/verifier/AuxiExprVerifier-AEV/tmp/"
 file = "test.c"
 PM = PassManager(orgDir, preDir, tmpDir, file)
 PM.add(PassPyParse)
