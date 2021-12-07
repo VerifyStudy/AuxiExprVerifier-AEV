@@ -354,7 +354,7 @@ class ARG(object):
         assert node.nodeType == NodeType.WhileHeadNode
         head = node
         whileBodyNodes = []
-        stack = [edge for edge in node.leavingEdges if edge.condition == False]
+        stack = [edge for edge in node.leavingEdges if edge.condition == True]
         while len(stack) > 0:
             edge = stack.pop()
             succ = edge.successor
