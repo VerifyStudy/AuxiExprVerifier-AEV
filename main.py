@@ -9,7 +9,7 @@ from passModule.PassSimplyExpr import PassSimplyExpr
 from passModule.PassCompleteBlock import PassCompleteBlock
 from passModule.PassAuxiExpr import PassAuxiExpr
 
-
+# abstrat path
 orgDir = "/home/liangle/verifier/AuxiExprVerifier-AEV/"
 preDir = "/home/liangle/verifier/AuxiExprVerifier-AEV/tmp/"
 tmpDir = "/home/liangle/verifier/AuxiExprVerifier-AEV/tmp/"

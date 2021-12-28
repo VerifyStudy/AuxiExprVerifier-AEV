@@ -13,10 +13,10 @@ int main()
   {
     if ((i % 2) == 0)
     {
-      n = n + 1;
+      n++;
     }
 
-    i = i + 1;
+    i++;
   }
 
   __VERIFIER_assert((k < 0) || (n == k));

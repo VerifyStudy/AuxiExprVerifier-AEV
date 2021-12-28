@@ -692,10 +692,13 @@ def parseBinaryAst(binaryAst: c_ast.BinaryOp) -> BinaryExpression:
     if isinstance(lvalue, c_ast.BinaryOp):  lhs = parseBinaryAst(lvalue)
     if isinstance(lvalue, c_ast.ID):        lhs = parseIdAst(lvalue)
     if isinstance(lvalue, c_ast.Constant):  lhs = parseConstantAst(lvalue)
+    if isinstance(lvalue, c_ast.UnaryOp):   lhs = parseUnaryAst(lvalue)
 
     if isinstance(rvalue, c_ast.BinaryOp):  rhs = parseBinaryAst(rvalue)
     if isinstance(rvalue, c_ast.ID):        rhs = parseIdAst(rvalue)
     if isinstance(rvalue, c_ast.Constant):  rhs = parseConstantAst(rvalue)
+    if isinstance(rvalue, c_ast.UnaryOp):   
+        rhs = parseUnaryAst(rvalue)
 
     if op in ["=", "==", "!=", "<", "<=", ">", ">=", "%", "&", "/", "+", "-", "*", "&&", "||"]:
         expr = BinaryExpression(lhs, rhs, op)
@@ -726,6 +729,13 @@ def parseUnaryAst(unaryAst : c_ast.UnaryOp) -> BinaryExpression:
         expr = BinaryExpression(lhsVarExpr1, BinaryExpression(lhsVarExpr2, oneVarExpr, op), "=")
         # return CFANode(expr, unaryOp, NodeType.AssignmentNode)
         return expr
+    elif operator == '-':
+        if isinstance(unaryAst.expr, c_ast.Constant):
+            return NumberExpression('-' + unaryAst.expr.value)
+        # TO DO -x 这个表达式不知道是否存在
+        elif isinstance(unaryAst.expr, c_ast.ID):
+            return VariableExpression('-' + unaryAst.expr.name)
+
 
 # Return BinaryExpression
 def parseAssignmentAst(assignAst : c_ast.Assignment) -> BinaryExpression:

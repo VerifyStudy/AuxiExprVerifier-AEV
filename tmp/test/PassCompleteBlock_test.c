@@ -8,15 +8,13 @@ int main()
     return 0;
   }
 
-  i = 0;
-  while (i < (2 * k))
+  for (i = 0; i < (2 * k); i++)
   {
     if ((i % 2) == 0)
     {
-      n = n + 1;
+      n++;
     }
 
-    i = i + 1;
   }
 
   __VERIFIER_assert((k < 0) || (n == k));
