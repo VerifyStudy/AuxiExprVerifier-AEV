@@ -1,8 +1,11 @@
 # AuxiExprVerifier-AEV
 辅助表达式验证工具是使用python脚本检测C语言程序，通过添加辅助表达式，提高插值效率，配合CPAChecker一起使用。
+# Dependent package
+pycparser 版本是2.20
+`pip3 install pycparser==2.20`
 # Run
 ## Run a single file
-./main
+`./main.py` or `python3 ./main.py`
 ## Run by a folder
 ./scripts/run.py -i your-folder -o your-output-folder
 # .vsocde/launch.json
